@@ -1,6 +1,7 @@
 ﻿using Demo1.Model;
 using Demo1.Services;
 using System.Collections.Generic;
+using System;
 
 namespace Demo1.Logic
 {
@@ -24,6 +25,19 @@ namespace Demo1.Logic
                     yield return product;
                 }
             }
+        }
+
+        public void Add(IEnumerable<Product> products)
+        {
+            foreach (var product in products)
+            {
+                _svc.AddProduct(product);
+            }
+        }
+
+        public void Add(Product product)
+        {
+            _svc.AddProduct(product);
         }
     }
 }

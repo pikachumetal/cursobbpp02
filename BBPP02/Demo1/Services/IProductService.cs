@@ -6,5 +6,6 @@ namespace Demo1.Services
     public interface IProductService
     {
         IEnumerable<Product> GetAll();
+        void AddProduct(Product product);
     }
 }

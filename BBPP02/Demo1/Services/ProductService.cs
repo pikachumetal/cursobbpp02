@@ -10,6 +10,14 @@ namespace Demo1.Services
 {
     public class ProductService : IProductService
     {
+        public void AddProduct(Product product)
+        {
+            using (var db = new DemoDbContext())
+            {
+                db.Products.Add(product);
+                db.SaveChanges();
+            }
+        }
 
         public IEnumerable<Product> GetAll()
         {
