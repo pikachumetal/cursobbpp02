@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{197B2269-52D7-4774-A75C-441963546851}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{3DB2DB99-88E2-4276-B0FF-9D55627002B7}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Demo1</RootNamespace>
-    <AssemblyName>Demo1</AssemblyName>
+    <RootNamespace>Demo1.Launcher</RootNamespace>
+    <AssemblyName>Demo1.Launcher</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -49,35 +52,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\DemoDbContext.cs" />
-    <Compile Include="Logic\ProductChooser.cs" />
-    <Compile Include="Migrations\201607271004253_Initial.cs" />
-    <Compile Include="Migrations\201607271004253_Initial.Designer.cs">
-      <DependentUpon>201607271004253_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607271007503_EstimationLines.cs" />
-    <Compile Include="Migrations\201607271007503_EstimationLines.Designer.cs">
-      <DependentUpon>201607271007503_EstimationLines.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Estimation.cs" />
-    <Compile Include="Model\EstimationLine.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model\Product.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\IProductService.cs" />
-    <Compile Include="Services\ProductService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201607271004253_Initial.resx">
-      <DependentUpon>201607271004253_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607271007503_EstimationLines.resx">
-      <DependentUpon>201607271007503_EstimationLines.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\Demo1\Demo1.csproj">
+      <Project>{197b2269-52d7-4774-a75c-441963546851}</Project>
+      <Name>Demo1</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

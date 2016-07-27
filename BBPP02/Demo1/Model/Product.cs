@@ -1,4 +1,4 @@
-﻿namespace Demo1
+﻿namespace Demo1.Model
 {
     public class Product
     {
