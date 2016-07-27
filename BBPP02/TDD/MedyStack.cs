@@ -24,7 +24,7 @@ namespace TDD
         {
             if (Items.Any())
             {
-                Items.RemoveAt(Count-1);
+                Items.RemoveAt(Count - 1);
             }
         }
 
